@@ -1,0 +1,127 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.15s ease;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal Container */
+.modal-container {
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  min-width: 300px;
+  max-width: 400px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  animation: slideIn 0.2s ease;
+  position: relative;
+  pointer-events: auto;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Icon */
+.modal-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Success Modal */
+.modal-success .modal-icon {
+  background: #10b981;
+  color: white;
+}
+
+/* Error Modal */
+.modal-error .modal-icon {
+  background: #ef4444;
+  color: white;
+}
+
+/* Warning Modal */
+.modal-warning .modal-icon {
+  background: #f59e0b;
+  color: white;
+}
+
+/* Info Modal */
+.modal-info .modal-icon {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Modal Content */
+.modal-content {
+  flex: 1;
+  text-align: left;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: #1f2937;
+}
+
+.modal-message {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .modal-container {
+    min-width: 280px;
+    padding: 20px;
+    gap: 14px;
+  }
+
+  .modal-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+
+  .modal-title {
+    font-size: 16px;
+  }
+
+  .modal-message {
+    font-size: 13px;
+  }
+}
